@@ -1,5 +1,4 @@
 #pragma once
-
 #include <cstddef>
 #include <cstdint>
 #include <map>
@@ -8,7 +7,8 @@
 #include <string>
 #include <vector>
 
-enum class OffsetStatus {
+enum class OffsetStatus
+{
   BASELINE,
   CHANGED,
   UNCHANGED,
@@ -27,7 +27,10 @@ class Dumper
 public:
   Dumper() = default;
 
-  void set_baseline_mode(bool val) { is_baseline_mode = val; }
+  void set_baseline_mode(bool val)
+  {
+    is_baseline_mode = val;
+  }
 
   void add_offset(const std::string &ns, const std::string &name, size_t offset);
   void add_offset_val(const std::string &ns, const std::string &name, size_t offset, uint64_t value);

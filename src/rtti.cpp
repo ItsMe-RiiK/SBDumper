@@ -79,7 +79,7 @@ namespace rtti
       return std::nullopt;
     }
 
-    return RttiInfo{demangle_itanium(*mangled)};
+    return RttiInfo{ demangle_itanium(*mangled) };
   }
 
   // find rtti of all classes in the module

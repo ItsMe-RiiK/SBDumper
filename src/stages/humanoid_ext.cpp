@@ -242,9 +242,10 @@ namespace stages
       {
         if (*v == 1)
         {
-          std::vector<size_t> skip = {
-              G_DUMPER.get_offset("Humanoid", "Sit").value_or(-1), G_DUMPER.get_offset("Humanoid", "RigType").value_or(-1),
-              G_DUMPER.get_offset("Humanoid", "AutoRotate").value_or(-1), G_DUMPER.get_offset("Humanoid", "FloorMaterial").value_or(-1)};
+          std::vector<size_t> skip = { G_DUMPER.get_offset("Humanoid", "Sit").value_or(-1),
+                                       G_DUMPER.get_offset("Humanoid", "RigType").value_or(-1),
+                                       G_DUMPER.get_offset("Humanoid", "AutoRotate").value_or(-1),
+                                       G_DUMPER.get_offset("Humanoid", "FloorMaterial").value_or(-1) };
           bool in_skip = false;
           for (size_t s : skip)
             if (s == off)

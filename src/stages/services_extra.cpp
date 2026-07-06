@@ -330,19 +330,21 @@ namespace stages
     size_t dm_addr = G_DATA_MODEL_ADDR;
 
     using DumperFn = void (*)(int, size_t);
+
     struct ServiceTodo
     {
       const char *rtti_name;
       DumperFn fn;
     };
+
     ServiceTodo service_todos[] = {
-        {"SoundService@RBX", dump_sound_service},
-        {"UserInputService@RBX", dump_user_input_service},
-        {"CoreGui@RBX", dump_core_gui},
-        {"NetworkClient@RBX", dump_network_client},
-        {"RunService@RBX", dump_run_service},
-        {"ReplicatedStorage@RBX", dump_replicated_storage},
-        {"ScriptContext@RBX", dump_script_context},
+      { "SoundService@RBX", dump_sound_service },
+      { "UserInputService@RBX", dump_user_input_service },
+      { "CoreGui@RBX", dump_core_gui },
+      { "NetworkClient@RBX", dump_network_client },
+      { "RunService@RBX", dump_run_service },
+      { "ReplicatedStorage@RBX", dump_replicated_storage },
+      { "ScriptContext@RBX", dump_script_context },
     };
 
     for (const auto &todo : service_todos)
@@ -357,48 +359,48 @@ namespace stages
       }
     }
 
-    const char *extra_services[] = {"ReplicatedFirst@RBX",
-                                    "ServerScriptService@RBX",
-                                    "ServerStorage@RBX",
-                                    "StarterGui@RBX",
-                                    "StarterPack@RBX",
-                                    "StarterPlayer@RBX",
-                                    "HttpService@RBX",
-                                    "LogService@RBX",
-                                    "Chat@RBX",
-                                    "InsertService@RBX",
-                                    "ContentProvider@RBX",
-                                    "Debris@RBX",
-                                    "CollectionService@RBX",
-                                    "PhysicsService@RBX",
-                                    "JointsService@RBX",
-                                    "TweenService@RBX",
-                                    "Selection@RBX",
-                                    "GuiService@RBX",
-                                    "Teams@RBX",
-                                    "BadgeService@RBX",
-                                    "SocialService@RBX",
-                                    "MarketplaceService@RBX",
-                                    "TeleportService@RBX",
-                                    "PresenceService@RBX",
-                                    "LocalizationService@RBX",
-                                    "PolicyService@RBX",
-                                    "FriendService@RBX",
-                                    "GroupService@RBX",
-                                    "SuggestionsService@RBX",
-                                    "PermissionsService@RBX",
-                                    "RobloxReplicatedStorage@RBX",
-                                    "RbxAnalyticsService@RBX",
-                                    "AnalyticsService@RBX",
-                                    "AdService@RBX",
-                                    "VRService@RBX",
-                                    "VoiceService@RBX",
-                                    "TextChatService@RBX",
-                                    "GamepadService@RBX",
-                                    "KeyframeSequenceProvider@RBX",
-                                    "AnimationClipProvider@RBX",
-                                    "MaterialService@RBX",
-                                    "TerrainRegion@RBX"};
+    const char *extra_services[] = { "ReplicatedFirst@RBX",
+                                     "ServerScriptService@RBX",
+                                     "ServerStorage@RBX",
+                                     "StarterGui@RBX",
+                                     "StarterPack@RBX",
+                                     "StarterPlayer@RBX",
+                                     "HttpService@RBX",
+                                     "LogService@RBX",
+                                     "Chat@RBX",
+                                     "InsertService@RBX",
+                                     "ContentProvider@RBX",
+                                     "Debris@RBX",
+                                     "CollectionService@RBX",
+                                     "PhysicsService@RBX",
+                                     "JointsService@RBX",
+                                     "TweenService@RBX",
+                                     "Selection@RBX",
+                                     "GuiService@RBX",
+                                     "Teams@RBX",
+                                     "BadgeService@RBX",
+                                     "SocialService@RBX",
+                                     "MarketplaceService@RBX",
+                                     "TeleportService@RBX",
+                                     "PresenceService@RBX",
+                                     "LocalizationService@RBX",
+                                     "PolicyService@RBX",
+                                     "FriendService@RBX",
+                                     "GroupService@RBX",
+                                     "SuggestionsService@RBX",
+                                     "PermissionsService@RBX",
+                                     "RobloxReplicatedStorage@RBX",
+                                     "RbxAnalyticsService@RBX",
+                                     "AnalyticsService@RBX",
+                                     "AdService@RBX",
+                                     "VRService@RBX",
+                                     "VoiceService@RBX",
+                                     "TextChatService@RBX",
+                                     "GamepadService@RBX",
+                                     "KeyframeSequenceProvider@RBX",
+                                     "AnimationClipProvider@RBX",
+                                     "MaterialService@RBX",
+                                     "TerrainRegion@RBX" };
 
     for (const char *rtti_name : extra_services)
     {

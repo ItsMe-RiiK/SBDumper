@@ -12,8 +12,8 @@ namespace stages
   {
     std::cerr << "[visual_engine]\n";
 
-    const char *sections[] = {".data", ".rdata", ".rodata"};
-    const char *targets[] = {"VisualEngine@Graphics@RBX", "DataModel@RBX"};
+    const char *sections[] = { ".data", ".rdata", ".rodata" };
+    const char *targets[] = { "VisualEngine@Graphics@RBX", "DataModel@RBX" };
 
     std::optional<size_t> ve_off;
     std::optional<size_t> dm_off;
@@ -91,7 +91,7 @@ namespace stages
 
     for (size_t off = 0; off < 0x2000; off += 0x10)
     {
-      float m[16] = {0};
+      float m[16] = { 0 };
       bool ok = true;
       for (int i = 0; i < 16; ++i)
       {

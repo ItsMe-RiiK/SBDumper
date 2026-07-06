@@ -112,7 +112,7 @@ namespace stages
             {
               if (r->name == "Primitive@RBX")
               {
-                out.push_back({child, po});
+                out.push_back({ child, po });
                 if (out.size() >= 3)
                   break;
               }
@@ -135,7 +135,7 @@ namespace stages
           {
             if (*pa == p)
             {
-              out.push_back({*ptr, po});
+              out.push_back({ *ptr, po });
               break;
             }
           }
@@ -518,7 +518,7 @@ namespace stages
           float score = total_pairs > 0 ? (float)diff_count / (float)total_pairs : 1.0f;
           if (score > 0.5f || total_pairs == 0)
           {
-            size_candidates.push_back({off, score});
+            size_candidates.push_back({ off, score });
           }
           off += 4;
         }

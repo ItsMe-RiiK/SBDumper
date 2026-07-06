@@ -208,11 +208,13 @@ namespace stages
                   continue;
                 if (auto wpa = memory::read<std::array<float, 3>>(fd, a + wp_off))
                 {
-                  if (std::abs((*wpa)[0] - (*p1)[0]) < 0.01f && std::abs((*wpa)[1] - (*p1)[1]) < 0.01f && std::abs((*wpa)[2] - (*p1)[2]) < 0.01f)
+                  if (std::abs((*wpa)[0] - (*p1)[0]) < 0.01f && std::abs((*wpa)[1] - (*p1)[1]) < 0.01f &&
+                      std::abs((*wpa)[2] - (*p1)[2]) < 0.01f)
                     continue;
                   if (auto wpa2 = memory::read<std::array<float, 3>>(fd, a2 + wp_off))
                   {
-                    if (std::abs((*wpa2)[0] - (*p2)[0]) > 0.01f || std::abs((*wpa2)[1] - (*p2)[1]) > 0.01f || std::abs((*wpa2)[2] - (*p2)[2]) > 0.01f)
+                    if (std::abs((*wpa2)[0] - (*p2)[0]) > 0.01f || std::abs((*wpa2)[1] - (*p2)[1]) > 0.01f ||
+                        std::abs((*wpa2)[2] - (*p2)[2]) > 0.01f)
                     {
                       G_DUMPER.add_offset("Attachment", "WorldPosition", wp_off);
                       std::cerr << "  Attachment::WorldPosition at +0x" << std::hex << wp_off << std::dec << "\n";

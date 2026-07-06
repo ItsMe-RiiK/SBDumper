@@ -15,10 +15,11 @@ namespace stages
     if (dm_addr < 0x10000)
       return;
 
-    std::vector<size_t> skip = {
-        G_DUMPER.get_offset("DataModel", "PlaceId").value_or(0), G_DUMPER.get_offset("DataModel", "CreatorId").value_or(0),
-        G_DUMPER.get_offset("DataModel", "GameId").value_or(0), G_DUMPER.get_offset("DataModel", "JobId").value_or(0),
-        G_DUMPER.get_offset("DataModel", "Workspace").value_or(0)};
+    std::vector<size_t> skip = { G_DUMPER.get_offset("DataModel", "PlaceId").value_or(0),
+                                 G_DUMPER.get_offset("DataModel", "CreatorId").value_or(0),
+                                 G_DUMPER.get_offset("DataModel", "GameId").value_or(0),
+                                 G_DUMPER.get_offset("DataModel", "JobId").value_or(0),
+                                 G_DUMPER.get_offset("DataModel", "Workspace").value_or(0) };
 
     for (size_t off = 0; off < 0x400; off += 8)
     {
@@ -122,19 +123,20 @@ namespace stages
       const char *name;
       const char *ns;
     };
+
     ServiceInfo services[] = {
-        {"RunService@RBX", "RunService"},
-        {"UserInputService@RBX", "UserInputService"},
-        {"HttpService@RBX", "HttpService"},
-        {"MarketplaceService@RBX", "MarketplaceService"},
-        {"TeleportService@RBX", "TeleportService"},
-        {"SocialService@RBX", "SocialService"},
-        {"Chat@RBX", "Chat"},
-        {"BadgeService@RBX", "BadgeService"},
-        {"InsertService@RBX", "InsertService"},
-        {"ScriptContext@RBX", "ScriptContext"},
-        {"ContentProvider@RBX", "ContentProvider"},
-        {"CorePackages@RBX", "CorePackages"},
+      { "RunService@RBX", "RunService" },
+      { "UserInputService@RBX", "UserInputService" },
+      { "HttpService@RBX", "HttpService" },
+      { "MarketplaceService@RBX", "MarketplaceService" },
+      { "TeleportService@RBX", "TeleportService" },
+      { "SocialService@RBX", "SocialService" },
+      { "Chat@RBX", "Chat" },
+      { "BadgeService@RBX", "BadgeService" },
+      { "InsertService@RBX", "InsertService" },
+      { "ScriptContext@RBX", "ScriptContext" },
+      { "ContentProvider@RBX", "ContentProvider" },
+      { "CorePackages@RBX", "CorePackages" },
     };
 
     for (const auto &svc : services)

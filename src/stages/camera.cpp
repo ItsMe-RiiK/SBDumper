@@ -48,7 +48,7 @@ namespace stages
       if (has_nan)
         continue;
 
-      float axes[3][3] = {{f[0], f[1], f[2]}, {f[3], f[4], f[5]}, {f[6], f[7], f[8]}};
+      float axes[3][3] = { { f[0], f[1], f[2] }, { f[3], f[4], f[5] }, { f[6], f[7], f[8] } };
       bool ortho = true;
       for (int i = 0; i < 3; ++i)
       {
@@ -73,7 +73,7 @@ namespace stages
       if (std::abs(det - 1.0f) > 0.02f)
         continue;
 
-      float pos[3] = {f[9], f[10], f[11]};
+      float pos[3] = { f[9], f[10], f[11] };
       if (std::abs(pos[0]) > 1e8f || std::abs(pos[1]) > 1e8f || std::abs(pos[2]) > 1e8f)
         continue;
 
@@ -119,8 +119,8 @@ namespace stages
       }
     }
 
-    const float common_res[][2] = {{1920.0f, 1080.0f}, {1366.0f, 768.0f}, {2560.0f, 1440.0f}, {3840.0f, 2160.0f},
-                                   {1440.0f, 900.0f},  {1536.0f, 864.0f}, {1280.0f, 720.0f},  {1680.0f, 1050.0f}};
+    const float common_res[][2] = { { 1920.0f, 1080.0f }, { 1366.0f, 768.0f }, { 2560.0f, 1440.0f }, { 3840.0f, 2160.0f },
+                                    { 1440.0f, 900.0f },  { 1536.0f, 864.0f }, { 1280.0f, 720.0f },  { 1680.0f, 1050.0f } };
 
     for (size_t off = 0; off < 0x500; off += 4)
     {

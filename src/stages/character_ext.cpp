@@ -52,7 +52,7 @@ namespace stages
     }
 
     std::optional<size_t> pa_opt;
-    const size_t ranges[] = {0x2000, 0x4000, 0x8000};
+    const size_t ranges[] = { 0x2000, 0x4000, 0x8000 };
     for (size_t range : ranges)
     {
       if (auto off = rtti::find(fd, dm_addr, "Players@RBX", range, 8))

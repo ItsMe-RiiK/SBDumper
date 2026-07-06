@@ -1,5 +1,4 @@
 #pragma once
-
 #include "dumper.hpp"
 #include <cstdint>
 #include <map>

@@ -68,11 +68,13 @@ namespace stages
       const char *n;
       size_t v;
     } colors[] = {
-        {"Asphalt", 0x30}, {"Basalt", 0x27},   {"Brick", 0xF},       {"Cobblestone", 0x33}, {"Concrete", 0xC},    {"CrackedLava", 0x2D},
-        {"Glacier", 0x1B}, {"Grass", 0x6},     {"Ground", 0x2A},     {"Ice", 0x36},         {"LeafyGrass", 0x39}, {"Limestone", 0x3F},
-        {"Mud", 0x24},     {"Pavement", 0x42}, {"Rock", 0x18},       {"Salt", 0x3C},        {"Sand", 0x12},       {"Sandstone", 0x21},
-        {"Slate", 0x9},    {"Snow", 0x1E},     {"WoodPlanks", 0x15},
+      { "Asphalt", 0x30 },     { "Basalt", 0x27 },    { "Brick", 0xF },      { "Cobblestone", 0x33 }, { "Concrete", 0xC },
+      { "CrackedLava", 0x2D }, { "Glacier", 0x1B },   { "Grass", 0x6 },      { "Ground", 0x2A },      { "Ice", 0x36 },
+      { "LeafyGrass", 0x39 },  { "Limestone", 0x3F }, { "Mud", 0x24 },       { "Pavement", 0x42 },    { "Rock", 0x18 },
+      { "Salt", 0x3C },        { "Sand", 0x12 },      { "Sandstone", 0x21 }, { "Slate", 0x9 },        { "Snow", 0x1E },
+      { "WoodPlanks", 0x15 },
     };
+
     for (const auto &c : colors)
     {
       G_DUMPER.add_offset("MaterialColors", c.n, c.v);

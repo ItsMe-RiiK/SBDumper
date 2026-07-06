@@ -159,7 +159,7 @@ namespace stages
         }
       }
       if (valid >= 2)
-        candidates.push_back({off, valid});
+        candidates.push_back({ off, valid });
     }
     std::sort(candidates.begin(), candidates.end(), [](const auto &a, const auto &b) { return a.second > b.second; });
     if (!candidates.empty())
@@ -199,7 +199,7 @@ namespace stages
 
   static void dump_bool_flags(int fd, const std::vector<size_t> &parts)
   {
-    const char *bool_names[] = {"Anchored", "CanCollide", "CanQuery", "CanTouch"};
+    const char *bool_names[] = { "Anchored", "CanCollide", "CanQuery", "CanTouch" };
     size_t ref_off = G_DUMPER.get_offset("BasePart", "CastShadow").value_or(0xED);
     size_t locked_off = G_DUMPER.get_offset("BasePart", "Locked").value_or(0xEE);
     uint32_t names_found = 0;

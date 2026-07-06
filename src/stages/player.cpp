@@ -93,7 +93,7 @@ namespace stages
 
     if (!players_addr)
     {
-      const size_t ranges[] = {0x2000, 0x4000, 0x8000};
+      const size_t ranges[] = { 0x2000, 0x4000, 0x8000 };
       for (size_t range : ranges)
       {
         if (auto off = rtti::find(fd, dm_addr, "Players@RBX", range, 8))
@@ -151,7 +151,7 @@ namespace stages
     size_t lp_addr = *lp_addr_opt;
     std::cerr << "  LocalPlayer @ 0x" << std::hex << lp_addr << std::dec << "\n";
 
-    const char *rtti_names[] = {"ModelInstance@RBX", "Model@RBX"};
+    const char *rtti_names[] = { "ModelInstance@RBX", "Model@RBX" };
     for (const char *rtti_name : rtti_names)
     {
       if (auto ch = rtti::find(fd, lp_addr, rtti_name, 0x1000, 8))

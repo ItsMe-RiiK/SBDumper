@@ -162,7 +162,7 @@ namespace stages
 
   static std::optional<std::pair<size_t, size_t>> try_children_bruteforce(int fd, size_t addr, size_t parent_off)
   {
-    const size_t strides[] = {0x10, 0x18, 0x20, 0x08};
+    const size_t strides[] = { 0x10, 0x18, 0x20, 0x08 };
     for (size_t start_off = 0; start_off < 0x300; start_off += 8)
     {
       if (start_off == parent_off)

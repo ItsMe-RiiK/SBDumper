@@ -15,21 +15,27 @@ void Dumper::add_offset(const std::string &ns, const std::string &name, size_t o
   {
     if (e.name == name)
     {
-      if (!is_baseline_mode) {
-        if (e.offset == offset) {
+      if (!is_baseline_mode)
+      {
+        if (e.offset == offset)
+        {
           e.status = OffsetStatus::UNCHANGED;
-        } else {
+        }
+        else
+        {
           e.status = OffsetStatus::CHANGED;
           e.offset = offset;
         }
-      } else {
+      }
+      else
+      {
         e.offset = offset;
       }
       return;
     }
   }
   OffsetStatus st = is_baseline_mode ? OffsetStatus::BASELINE : OffsetStatus::NEW;
-  entries.push_back({name, offset, st});
+  entries.push_back({ name, offset, st });
 }
 
 void Dumper::add_offset_val(const std::string &ns, const std::string &name, size_t offset, uint64_t value)

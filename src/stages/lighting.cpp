@@ -112,7 +112,7 @@ namespace stages
               }
             }
 
-            const char *names[] = {"Decay", "Glare", "Density", "Haze", "Offset"};
+            const char *names[] = { "Decay", "Glare", "Density", "Haze", "Offset" };
             for (const char *name : names)
             {
               std::vector<size_t> skip_offs;
@@ -226,7 +226,7 @@ namespace stages
         }
       }
 
-      const char *tnames[] = {"WaterReflectance", "WaterTransparency", "GrassLength", "WaterWaveSize", "WaterWaveSpeed"};
+      const char *tnames[] = { "WaterReflectance", "WaterTransparency", "GrassLength", "WaterWaveSize", "WaterWaveSpeed" };
       for (const char *name : tnames)
       {
         std::vector<size_t> skip_offs;

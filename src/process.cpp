@@ -35,7 +35,7 @@ static std::vector<MemRegion> parse_maps(int pid)
     size_t start = std::stoull(addr_range.substr(0, dash), nullptr, 16);
     size_t end = std::stoull(addr_range.substr(dash + 1), nullptr, 16);
 
-    regions.push_back({start, end, perms, path});
+    regions.push_back({ start, end, perms, path });
   }
   return regions;
 }
@@ -71,12 +71,14 @@ static std::optional<int> find_process_by_name(const std::string &name)
 static std::optional<size_t> find_libroblox_base(int pid)
 {
   auto maps = parse_maps(pid);
+
   struct Candidate
   {
     size_t addr;
     size_t size;
     std::string path;
   };
+
   std::vector<Candidate> candidates;
 
   for (const auto &r : maps)
@@ -88,7 +90,7 @@ static std::optional<size_t> find_libroblox_base(int pid)
     size_t size = r.end - r.start;
     if (size > 50 * 1024 * 1024)
     {
-      candidates.push_back({r.start, size, r.path});
+      candidates.push_back({ r.start, size, r.path });
     }
   }
 
@@ -133,9 +135,7 @@ static std::optional<size_t> find_libroblox_base(int pid)
   return candidates.front().addr;
 }
 
-Process::Process() : pid(0), module_base(0), mem_file(-1)
-{
-}
+Process::Process() : pid(0), module_base(0), mem_file(-1) {}
 
 Process::~Process()
 {
@@ -181,10 +181,12 @@ int Process::get_pid() const
 {
   return pid;
 }
+
 size_t Process::get_module_base() const
 {
   return module_base;
 }
+
 int Process::get_mem_file() const
 {
   return mem_file;
@@ -219,7 +221,7 @@ std::optional<std::pair<size_t, size_t>> Process::get_section(const std::string 
 
     if (match_perm)
     {
-      matching.push_back({r.start, r.end});
+      matching.push_back({ r.start, r.end });
     }
   }
 
