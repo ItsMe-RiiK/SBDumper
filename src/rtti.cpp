@@ -1,5 +1,7 @@
 #include "rtti.hpp"
+
 #include "memory.hpp"
+
 #include <algorithm>
 #include <vector>
 

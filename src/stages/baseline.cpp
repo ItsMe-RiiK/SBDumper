@@ -1,5 +1,6 @@
 #include "dumper.hpp"
 #include "stages.hpp"
+
 #include <iostream>
 
 namespace stages
